@@ -38,4 +38,12 @@ final class CTests: XCTestCase {
         
         XCTAssertEqual(result, expectedResult)
     }
+    
+    func testOperationSignGetter() throws {
+        let additionSign = String(cString: math_operation_sign_get(MATH_OPERATION_ADDITION))
+        XCTAssertEqual(additionSign, "+")
+        
+        let subtractionSign = String(cString: math_operation_sign_get(MATH_OPERATION_SUBTRACTION))
+        XCTAssertEqual(subtractionSign, "-")
+    }
 }

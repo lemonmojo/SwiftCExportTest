@@ -23,4 +23,6 @@ extern int64_t math_execute(math_instance_t _Nonnull instance,
                             int64_t number1,
                             int64_t number2);
 
+extern char* _Nonnull math_operation_sign_get(MATH_OPERATION operation);
+
 #endif /* definitions_h */

@@ -16,6 +16,10 @@ public class Math {
         self.operation = operation
     }
     
+    deinit {
+        print("[DEBUG] Deinitializing Math instance")
+    }
+    
     func execute(number1: Int64,
                  number2: Int64) -> Int64 {
         let result: Int64

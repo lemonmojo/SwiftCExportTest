@@ -4,8 +4,6 @@ import FoundationEssentials
 import Foundation
 #endif
 
-@_implementationOnly import CDefinitions
-
 extension UnsafeMutableRawPointer {
     static func retainedPointerFrom<T: AnyObject>(_ target: T) -> Self {
         pointerFrom(target,
@@ -58,29 +56,5 @@ private extension UnsafeMutableRawPointer {
         }
         
         return inst
-    }
-}
-
-extension Math.Operation {
-    var cOperation: MATH_OPERATION {
-        switch self {
-            case .addition:
-                MATH_OPERATION_ADDITION
-            case .subtraction:
-                MATH_OPERATION_SUBTRACTION
-        }
-    }
-}
-
-extension MATH_OPERATION {
-    var swiftOperation: Math.Operation {
-        switch self {
-            case MATH_OPERATION_ADDITION:
-                .addition
-            case MATH_OPERATION_SUBTRACTION:
-                .subtraction
-            default:
-                fatalError("Unknown Math Operation: \(self)")
-        }
     }
 }

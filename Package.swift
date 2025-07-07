@@ -23,7 +23,11 @@ let package = Package(
         
         .target(
             name: "SwiftCExportTest",
-            dependencies: [ "CDefinitions" ]
+            dependencies: [ "CDefinitions" ],
+            swiftSettings: [
+                // Required to be able to use `@_used`
+                .enableExperimentalFeature("SymbolLinkageMarkers")
+            ]
         ),
         
         .executableTarget(name: "CDemo",
